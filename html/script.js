@@ -100,5 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
         part.parentElement.prepend(document.createElement('br'))
         part.parentElement.appendChild(document.createElement('hr'))
     })
-    
+
+    //Ajoute la signature
+    let username = document.querySelector('script[src="script.js"]').dataset.signature
+    let footer = document.querySelector('footer')
+    let usernameSpan = document.createElement('span')
+    usernameSpan.innerText = username
+    usernameSpan.style.float = 'right'
+    footer.appendChild(usernameSpan)
+
 })
