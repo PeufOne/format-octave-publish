@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     //Ajoute la signature
-    let username = document.querySelector('script[src="script.js"]').dataset.signature
+    let username = document.getElementById('structurScript').dataset.signature
     let footer = document.querySelector('footer')
     let usernameSpan = document.createElement('span')
     usernameSpan.innerText = username
