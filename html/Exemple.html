@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Titre du document</title>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] },
+  TeX: { equationNumbers: { autoNumber: 'all' } }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script type="text/javascript" src="script.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+body > * {
+  max-width: 42em;
+}
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  padding-left: 7.5em;
+  padding-right: 7.5em;
+}
+pre, code {
+  max-width: 50em;
+  font-family: monospace;
+}
+pre.oct-code {
+  border: 1px solid Grey;
+  padding: 5px;
+}
+pre.oct-code-output {
+  margin-left: 2em;
+}
+span.comment {
+  color: ForestGreen;
+}
+span.keyword {
+  color: Blue;
+}
+span.string {
+  color: DarkOrchid;
+}
+footer {
+  margin-top: 2em;
+  font-size: 80%;
+}
+a, a:visited {
+  color: Blue;
+}
+h2 {
+  font-family: "Roboto Condensed", serif;
+  margin-top: 1.5em;
+}
+h2 a, h2 a:visited {
+  color: Black;
+}
+</style>
+
+</head>
+<body>
+<h1>Titre du document</h1>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#node1">Sous-titre 1</a></li>
+</ul>
+<h2><a id="node1">Sous-titre 1</a></h2>
+<p><b>Partie 1 : calcul simple</b></p>
+
+<pre class="oct-code">b = [4; 9; 2];
+A = [ 3 4 5;
+      1 3 1;
+      3 5 9 ];
+x = A \ b</pre>
+
+<pre class="oct-code-output">x =
+ 
+  -1.5000
+   4.0000
+  -1.5000
+ 
+</pre>
+
+<p>Le ";" � la fin d'une ligne emp�che la sortie d'�tre affich�</p>
+
+<p><b>Partie 2 : sinus</b></p>
+
+<pre class="oct-code">figure(1)
+x = -10:0.1:10;
+y = sin (x);
+plot (x, y);
+title (<span class="string">"Simple 2-D Plot"</span>);
+xlabel (<span class="string">"x"</span>);
+ylabel (<span class="string">"sin (x)"</span>);</pre>
+<img src="Exemple-1.png" alt="Exemple-1.png">
+<p>Une sinusoide, ca donne le mal de mer.</p>
+
+<p><b>Partie 3 : Le mexique</b></p>
+
+<pre class="oct-code">figure(2)
+sombrero()</pre>
+<img src="Exemple-2.png" alt="Exemple-2.png">
+<p>Il y a quatre belles choses � Mexico : les femmes, les habits, les chevaux et les rues.</p>
+
+<footer>
+<hr>
+<a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
+</footer>
+<!--
+##### SOURCE BEGIN #####
+%% Titre du document
+
+%% Sous-titre 1
+
+%%
+% *Partie 1 : calcul simple*
+
+b = [4; 9; 2];
+A = [ 3 4 5;
+      1 3 1;
+      3 5 9 ];
+x = A \ b
+%%
+% Le ";" � la fin d'une ligne emp�che la sortie d'�tre affich�
+
+
+%%
+% *Partie 2 : sinus*
+figure(1)
+x = -10:0.1:10;
+y = sin (x);
+plot (x, y);
+title ("Simple 2-D Plot");
+xlabel ("x");
+ylabel ("sin (x)");
+%%
+% Une sinusoide, ca donne le mal de mer.
+
+%%
+% *Partie 3 : Le mexique*
+figure(2)
+sombrero()
+%%
+% Il y a quatre belles choses � Mexico : les femmes, les habits, les chevaux et les rues.
+##### SOURCE END #####
+-->
+</body>
+</html>

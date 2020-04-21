@@ -1,0 +1,63 @@
+
+
+* {
+	box-sizing: border-box;
+}
+
+h2:nth-child(3), body > ul:nth-child(4){
+	display: none;
+} 
+
+pre {
+	border-radius: 4px;
+	background: rgb(250, 250, 250);
+	padding: 5px;
+	white-space: break-spaces;
+	margin: none;
+}
+
+.part {
+	page-break-inside: avoid;
+}
+
+.container {
+	width: 1000px;
+}
+
+.step {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	page-break-inside: avoid;
+}
+
+.input, .output, body > pre, img{
+	width: 480px;
+}
+
+.output p, img {
+	margin-left: 2em;
+	text-align: justify;
+}
+
+
+footer::after{
+	content: "Marie Gête";
+	float: right;
+}
+
+body {
+	width: 1000px !important;
+	padding-left: .5em !important;
+	padding-right: .5em !important;
+	-webkit-print-color-adjust: exact !important;
+}
+
+body > * {
+	max-width: 1000px !important;
+}
+
+hr {
+	border-style: solid;
+	border-color: #eaeaea;
+}
