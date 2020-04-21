@@ -76,7 +76,7 @@ Cela est du à un problème d'encodage.
 
 Il peut être résolue en réencodant votre script .m *avant* d'utilisé la fonction publish()
 
-![changement de l'encodage](https://raw.githubusercontent.com/PeufOne/format-octave-publish/master/illustrations/change-encodage.png "changement de l'encodage")
+![changement de l'encodage](https://raw.githubusercontent.com/PeufOne/format-octave-publish/master/illustrations/change-encodage.PNG "changement de l'encodage")
 
 1. Ouvre ton script avec le bloc-notes
 2. Fait un *Enregistrer sous*
