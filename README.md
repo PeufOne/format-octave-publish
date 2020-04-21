@@ -20,7 +20,7 @@ Ajoute ces deux ligne dans la balise "head" du fichier html qui à été génér
 ```html
 <head>
     <script data-signature="Jonas Voisard" id="structurScript"type="text/javascript" src="https://raw.githack.com/PeufOne/format-octave-publish/master/html/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://raw.githack.com/PeufOne/format-octave-publish/master/html/style.css">
     ...
 <head/>
 ```
