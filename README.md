@@ -85,6 +85,6 @@ Il peut être résolue en réencodant votre script .m *avant* d'utilisé la fonc
 5. Enregistre
 
 Tu peux maintant recommencer l'étape de publication avec le nouveau fichier.
-Mais attention le nom du fichier à changer (et le html généré aussi).
+Mais attention le nom du fichier à changé (et le html généré aussi).
 
 :)
