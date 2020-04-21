@@ -26,16 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let newDivElements = []
     let newStep = undefined
     let steps = []
+    let stepFirstCall = true
     
+    function groupCondition(elem) {
+        let isSubTitle = elem.tagName === 'P' && elem.firstChild && elem.firstChild.tagName === 'B'
+        let isTitle = elem.tagName === 'H2'
+        return isSubTitle || isTitle
+    }
+
     let i = 0, j = 0
-    while (i < all.length - 1) {
+    while (i < all.length) {
 
         //Regroupe les elements entre les titres dans newDivElements
-        if (all[i].tagName === 'P' && all[i].firstChild && all[i].firstChild.tagName === 'B') {
+        if (groupCondition(all[i])) {
             subTitle = all[i]
             j = i + 1
-            while (j < all.length -1) {
-                if (all[j].tagName === 'P' && all[j].firstChild && all[j].firstChild.tagName === 'B') {
+            while (j < all.length) {
+                if (groupCondition(all[j])) {
                     j = all.length
                 }else{
                     newDivElements.push(all[j])
@@ -52,8 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (title) divPart.appendChild(title)
             title = undefined
 
+            stepFirstCall = true //pour les étape qui ne commence pas par oct-code
             newDivElements.forEach(newElement => {
-                if (newElement.classList.contains('oct-code')) {
+                if (newElement.classList.contains('oct-code') || stepFirstCall) {
+                    
                     newStep = document.createElement('div')
                     newStep.className = 'step'
                     divInput = document.createElement('div')
@@ -61,10 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     divOutput = document.createElement('div')
                     divOutput.className = 'output'
 
-                    divInput.appendChild(newElement)
+                    if (newElement.classList.contains('oct-code') ) {
+                        divInput.appendChild(newElement)
+                    }else {
+                        newStep.appendChild(newElement)
+                    }
                     newStep.appendChild(divInput)
                     newStep.appendChild(divOutput)
                     steps.push(newStep)
+                    stepFirstCall = false
 
                 }else if(newElement.classList.contains('oct-code-output') || newElement.tagName == 'IMG' || newElement.tagName == 'P'){
                     divOutput.appendChild(newElement)

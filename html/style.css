@@ -4,7 +4,8 @@
 	box-sizing: border-box;
 }
 
-h2:nth-child(3), body > ul:nth-child(4){
+/*hide contents liste*/
+body > div:nth-child(3){
 	display: none;
 } 
 
