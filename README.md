@@ -9,7 +9,7 @@ Petit script et style à ajouter au document html généré par la fonction "pub
 * Mise à niveau vertical étape par étape
 * Traitement des sous-titres de 2eme niveau en ajoutant une séparation horizontal
 * Gestion des sauts de pages lors de l'impression en PDF
-* Supression de la table "Content"
+* Suppression de la table "Content"
 * Ajout d'une signature au document
 
 ## Comment ca s'utilise
@@ -24,7 +24,9 @@ Cette fonction génère un répertoire "html" dans lequel sera créer un fichier
 
 1. Ouvre le fichier "Exemple.html" avec un editeur de text (bloc-notes)
 2. Copie et colle les lignes "script" et "link" ci dessous dans l'entête du fichier (head)
-3. remplace "Ma signature" par ton nom
+3. Remplace "Ma signature" par ton nom
+4. Enregistre
+5. Ouvre le fichier dans un navigateur
 
 Exemple.html
 ```html
@@ -33,15 +35,15 @@ Exemple.html
     <script data-signature="Ma signature" id="structurScript" type="text/javascript" src="https://raw.githack.com/PeufOne/format-octave-publish/master/html/script.js"></script>
     <link rel="stylesheet" type="text/css" href="https://raw.githack.com/PeufOne/format-octave-publish/master/html/style.css">
     ...
-<head/>
+</head>
 ```
 
-### Sytaxe du script .m
+### Syntaxe du script .m
 
-Les titre doivent s'écrire comme cela:
+Les titres doivent s'écrire comme cela:
 ```
-%% Mon titre
 ...
+%% Mon titre
 ...
 ```
 
@@ -52,7 +54,7 @@ Le sous-titre de 2eme niveau doivent s'écrire entre deux *:
 ...
 ```
 
-Les commentaires simple seront exporté du code s'il il respecte la sytaxe suivante:
+Les commentaires simples seront exportés du code s'il il respecte la sytaxe suivante:
 ```
 %%
 % Mon super commentaire 
@@ -71,20 +73,21 @@ Voir [un exemple](https://github.com/PeufOne/format-octave-publish/blob/master/E
 
 ### Problème d'encodage
 
-Il ce peut que tu aies des problème d'encodage avec certain symbole comme "éàè°" etc...
+Il se peut que tu aies des problèmes d'encodages avec certain symbole comme "éàè°" etc...
+
 Cela est du à un problème d'encodage.
 
-Il peut être résolue en réencodant votre script .m *avant* d'utilisé la fonction publish()
+Il peut être résolu en réencodant votre script .m *avant* d'utilisé la fonction publish()
 
 ![changement de l'encodage](https://raw.githubusercontent.com/PeufOne/format-octave-publish/master/illustrations/change-encodage.PNG "changement de l'encodage")
 
 1. Ouvre ton script avec le bloc-notes
-2. Fait un *Enregistrer sous*
+2. Fais un *Enregistrer sous*
 3. Change le nom du fichier pour ne pas l'écraser (ajoute _utf8 par exemple)
 4. Change l'encodage ANSI en UTF-8
 5. Enregistre
 
 Tu peux maintant recommencer l'étape de publication avec le nouveau fichier.
-Mais attention le nom du fichier à changé (et le html généré aussi).
+Mais attention le nom du fichier a changé (et le html généré aussi).
 
 :)
